@@ -14,10 +14,10 @@ import java.util.List;
 public interface MyCollegeDao {
 
     @Insert
-    void insert(CollegeEntity collegeEntity);
+    void insert(MyCollegeEntity myCollegeEntity);
 
     @Query("select * from college where branchname='cs'")
-    LiveData<List<CollegeEntity>> getStudentName();
+    LiveData<List<MyCollegeEntity>> getStudentName();
 
 
     Migration MIGRATION_1_2 = new Migration(1, 2) {

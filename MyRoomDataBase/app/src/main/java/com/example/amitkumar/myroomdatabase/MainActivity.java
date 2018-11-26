@@ -62,11 +62,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //Switch case so that we can use on switch case for all the action -insert,update ,delete,get
             switch (mType) {
                 case 1:
-                    CollegeEntity collegeEntity = new CollegeEntity();
+                    MyCollegeEntity myCollegeEntity = new MyCollegeEntity();
                     //Hard coded data for sample app
-                    collegeEntity.setmBranchName("cs");
-                    collegeEntity.setmStudentName(mGetNameFromEditText);
-                    mMyCollegeDataBaseObj.myCollegeDao().insert(collegeEntity);
+                    myCollegeEntity.setmBranchName("cs");
+                    myCollegeEntity.setmStudentName(mGetNameFromEditText);
+                    mMyCollegeDataBaseObj.myCollegeDao().insert(myCollegeEntity);
                     break;
 
                 default:
@@ -96,10 +96,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .addMigrations(MyCollegeDao.MIGRATION_1_2)//Whenever we change any thing in existing table at that time we have to add this line
                 .build();
         //Live data registration to get update
-        LiveData<List<CollegeEntity>> universityLiveData = mMyCollegeDataBaseObj.myCollegeDao().getStudentName();
-        universityLiveData.observe(this, new Observer<List<CollegeEntity>>() {
+        LiveData<List<MyCollegeEntity>> universityLiveData = mMyCollegeDataBaseObj.myCollegeDao().getStudentName();
+        universityLiveData.observe(this, new Observer<List<MyCollegeEntity>>() {
             @Override
-            public void onChanged(@Nullable List<CollegeEntity> universities) {
+            public void onChanged(@Nullable List<MyCollegeEntity> universities) {
                 //Update your UI here.
                 Toast.makeText(MainActivity.this, "Observe", Toast.LENGTH_SHORT).show();
                 mTxtDisplay.setText(universities.get(universities.size() - 1).getmStudentName());

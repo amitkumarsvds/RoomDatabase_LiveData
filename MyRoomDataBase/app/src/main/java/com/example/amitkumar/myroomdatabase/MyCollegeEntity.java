@@ -5,7 +5,7 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "college")
-public class CollegeEntity {
+public class MyCollegeEntity {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "rollno")
