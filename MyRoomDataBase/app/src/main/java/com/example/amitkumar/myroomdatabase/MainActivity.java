@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onChanged(@Nullable List<MyCollegeEntity> universities) {
                 //Update your UI here.
                 Toast.makeText(MainActivity.this, "Observe", Toast.LENGTH_SHORT).show();
-                mTxtDisplay.setText(universities.get(universities.size() - 1).getmStudentName());
+//                mTxtDisplay.setText(universities.get(universities.size() - 1).getmStudentName());
             }
         });
     }
